@@ -56,7 +56,7 @@ class AdvancedSearch
 			$label = get_taxonomy( $taxonomy )->label;
 			$select = sprintf( '<select name="%s">', esc_attr( $query ) );
 			$select .= sprintf( '<option value="">%s</option>', esc_attr( $label . 'で絞り込む' ) );
-			foreach ( get_terms( $taxonomy ) as $term ) {
+			foreach ( get_terms( $taxonomy, array( 'orderby' => 'id', 'order' => 'ASC' ) ) as $term ) {
 				if ( ! empty( $queries->taxonomies[ $query ] ) && $term->term_id === $queries->taxonomies[ $query ] ) {
 					$option = '<option value="%s" selected>%s</option>';
 				} else {
