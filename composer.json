@@ -6,9 +6,6 @@
             "email": "miyauchi@digitalcube.jp"
         }
     ],
-    "require": {
-        "mustache/mustache": "*"
-    },
     "autoload": {
         "psr-0": {
             "Megumi": "lib/"
