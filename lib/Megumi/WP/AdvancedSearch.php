@@ -78,7 +78,6 @@ class AdvancedSearch
 		$tags = array();
 		if ( $this->tags_term ) {
 			foreach ( get_terms( $this->tags_term ) as $term ) {
-				var_dump($term->name);
 				$tags[] = sprintf(
 					'<label><input type="checkbox" name="t" value="%1$s" %3$s> %2$s</label>',
 					esc_attr( $term->term_id ),
