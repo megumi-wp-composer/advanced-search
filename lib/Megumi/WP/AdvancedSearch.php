@@ -78,10 +78,11 @@ class AdvancedSearch
 		$tags = array();
 		if ( $this->tags_term ) {
 			foreach ( get_terms( $this->tags_term ) as $term ) {
+				var_dump($term->name);
 				$tags[] = sprintf(
-					'<label><input type="ceckbox" name="t" value="%1$s" %3$s> %2$s</label>',
-					$term->term_id,
-					$term->name,
+					'<label><input type="checkbox" name="t" value="%1$s" %3$s> %2$s</label>',
+					esc_attr( $term->term_id ),
+					esc_html( $term->name ),
 					( ! empty( $_GET['tags'] ) && in_array( $term->term_id, $_GET['tags'] ) ) ? 'checked': ''
 				);
 			}
