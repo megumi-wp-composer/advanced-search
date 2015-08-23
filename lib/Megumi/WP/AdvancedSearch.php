@@ -44,7 +44,7 @@ class AdvancedSearch
 		);
 
 		$posts = array();
-		return get_posts( $args );
+		return get_posts( apply_filters( 'wp_advanced_search_query_args', $args ) );
 	}
 
 	public function get_selects()
